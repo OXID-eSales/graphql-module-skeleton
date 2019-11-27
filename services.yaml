@@ -1,0 +1,13 @@
+services:
+
+  _defaults:
+    public: false
+    autowire: true
+
+  __Vendor__\GraphQL\__Package__\Controller\:
+    resource: 'src/Controller/*'
+    public: true
+
+  __Vendor__\GraphQL\__Package__\Framework\NamespaceMapper:
+    class: __Vendor__\GraphQL\__Package__\Framework\NamespaceMapper
+    tags: ['graphql_namespace_mapper']
