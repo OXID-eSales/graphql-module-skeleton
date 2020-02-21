@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright © OXID eSales AG. All rights reserved.
+ * All rights reserved.
  * See LICENSE file for license details.
  */
 
@@ -16,14 +16,14 @@ class NamespaceMapper implements NamespaceMapperInterface
     public function getControllerNamespaceMapping(): array
     {
         return [
-            '\\__Vendor__\\GraphQL\\__Package__\\Controller' => __DIR__ . '/../Controller/'
+            '\\__Vendor__\\GraphQL\\__Package__\\Controller' => __DIR__ . '/../Controller/',
         ];
     }
 
     public function getTypeNamespaceMapping(): array
     {
         return [
-            '\\__Vendor__\\GraphQL\\__Package__\\DataObject' => __DIR__ . '/../DataObject/'
+            '\\__Vendor__\\GraphQL\\__Package__\\DataObject' => __DIR__ . '/../DataObject/',
         ];
     }
 }

@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * All rights reserved.
+ * See LICENSE file for license details.
+ */
+
 declare(strict_types=1);
 
 namespace __Vendor__\GraphQL\__Package__\Tests\Integration\Controller;
@@ -8,12 +13,12 @@ use OxidEsales\GraphQL\Base\Tests\Integration\TestCase;
 
 class CategoryTest extends TestCase
 {
-    public function testGetSingleCategoryWithoutParam()
+    public function testGetSingleCategoryWithoutParam(): void
     {
-        $this->execQuery('query { category }');
-        $this->assertEquals(
+        $result = $this->execQuery('query { category }');
+        $this->assertSame(
             400,
-            static::$queryResult['status']
+            $result['status']
         );
     }
 }

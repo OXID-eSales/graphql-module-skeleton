@@ -1,11 +1,17 @@
 <?php
 
+/**
+ * All rights reserved.
+ * See LICENSE file for license details.
+ */
+
 declare(strict_types=1);
 
 namespace __Vendor__\GraphQL\__Package__\Controller;
 
-use OxidEsales\EshopCommunity\Application\Model\Category as CategoryModel;
+use OxidEsales\Eshop\Application\Model\Category as CategoryEshopModel;
 use __Vendor__\GraphQL\__Package__\DataObject\Category as CategoryDataObject;
+use __Vendor__\GraphQL\__Package__\Exception\CategoryNotFound;
 use TheCodingMachine\GraphQLite\Annotations\Query;
 
 class Category
@@ -15,14 +21,17 @@ class Category
      *
      * @Query()
      */
-    public function category(string $id): ?CategoryDataObject
+    public function category(string $id): CategoryDataObject
     {
-        /** @var CategoryModel */
-        $category = oxNew(CategoryModel::class);
+        /** @var CategoryEshopModel */
+        $category = oxNew(CategoryEshopModel::class);
+
         if (!$category->load($id)) {
-            return null;
+            throw CategoryNotFound::byId($id);
         }
-        $category = CategoryDataObject::createFromModel($category);
-        return $category;
+
+        return new CategoryDataObject(
+            $category
+        );
     }
 }

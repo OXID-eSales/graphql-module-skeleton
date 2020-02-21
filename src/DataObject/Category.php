@@ -1,78 +1,48 @@
 <?php
 
+/**
+ * All rights reserved.
+ * See LICENSE file for license details.
+ */
+
 declare(strict_types=1);
 
 namespace __Vendor__\GraphQL\__Package__\DataObject;
 
-use OxidEsales\EshopCommunity\Application\Model\Category as CategoryModel;
+use OxidEsales\Eshop\Application\Model\Category as CategoryEshopModel;
 use TheCodingMachine\GraphQLite\Annotations\Field;
 use TheCodingMachine\GraphQLite\Annotations\Type;
+use TheCodingMachine\GraphQLite\Types\ID;
 
 /**
  * @Type()
  */
 class Category
 {
-    /** @var string */
-    private $id;
-
-    /** @var string */
-    private $name;
-
-    /** @var string */
-    private $parentid;
-
-    /** @var \DateTimeInterface */
-    private $timestamp;
+    /** @var CategoryEshopModel */
+    private $category;
 
     public function __construct(
-        string $id,
-        string $name,
-        string $parentid,
-        \DateTimeInterface $timestamp
+        CategoryEshopModel $category
     ) {
-        $this->id = $id;
-        $this->name = $name;
-        $this->parentid = $parentid;
-        $this->timestamp = $timestamp;
+        $this->category = $category;
     }
 
-    public static function createFromModel(CategoryModel $category): self
+    /**
+     * @Field
+     */
+    public function getId(): ID
     {
-        return new self(
-            $category->getId(),
-            (string)$category->oxcategories__oxtitle,
-            (string)$category->oxcategories__oxpartentid,
-            new \DateTimeImmutable((string)$category->oxcategories__oxtimestamp)
+        return new ID(
+            $this->category->getId()
         );
     }
 
     /**
-     * @Field(outputType="ID")
+     * @Field
      */
-    public function getId(): string
+    public function getTitle(): string
     {
-        return $this->id;
-    }
-
-    /**
-     * @Field()
-     */
-    public function getName(): string
-    {
-        return $this->name;
-    }
-
-    public function getParentid(): string
-    {
-        return $this->parentid;
-    }
-
-    /**
-     * @Field()
-     */
-    public function getTimestamp(): \DateTimeInterface
-    {
-        return $this->timestamp;
+        return (string) $this->category->getFieldData('oxtitle');
     }
 }

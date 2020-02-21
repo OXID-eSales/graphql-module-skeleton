@@ -11,7 +11,7 @@ This skeleton will set you up with a
 - including a sane `README.md`
 - pre setup `NamespaceMapper`
 - simple example controller
-- nice developement expirience
+- nice developement experience
 
 ## How to use
 
