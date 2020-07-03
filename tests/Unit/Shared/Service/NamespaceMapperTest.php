@@ -7,13 +7,13 @@
 
 declare(strict_types=1);
 
-namespace __Vendor__\GraphQL\__Package__\Tests\Unit\Framework;
+namespace __Vendor__\GraphQL\__Package__\Tests\Unit\Shared\Service;
 
 use PHPUnit\Framework\TestCase;
-use __Vendor__\GraphQL\__Package__\Framework\NamespaceMapper;
+use __Vendor__\GraphQL\__Package__\Shared\Service\NamespaceMapper;
 
 /**
- * @covers __Vendor__\GraphQL\__Package__\Framework\NamespaceMapper
+ * @covers __Vendor__\GraphQL\__Package__\Shared\Service\NamespaceMapper
  */
 class NamespaceMapperTest extends TestCase
 {

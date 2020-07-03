@@ -1,13 +1,14 @@
 services:
 
-  _defaults:
-    public: false
-    autowire: true
+    _defaults:
+        public: false
+        autowire: true
 
-  __Vendor__\GraphQL\__Package__\Controller\:
-    resource: 'src/Controller/*'
-    public: true
+    __Vendor__\GraphQL\__Package__\:
+        resource: 'src/*'
+        exclude: 'src/**/DataType'
+        public: true
 
-  __Vendor__\GraphQL\__Package__\Framework\NamespaceMapper:
-    class: __Vendor__\GraphQL\__Package__\Framework\NamespaceMapper
-    tags: ['graphql_namespace_mapper']
+    __Vendor__\GraphQL\__Package__\Shared\Service\NamespaceMapper:
+        class: __Vendor__\GraphQL\__Package__\Shared\Service\NamespaceMapper
+        tags: ['graphql_namespace_mapper']

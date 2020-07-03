@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace __Vendor__\GraphQL\__Package__\Exception;
+namespace __Vendor__\GraphQL\__Package__\Category\Exception;
 
 use OxidEsales\GraphQL\Base\Exception\NotFound;
 
