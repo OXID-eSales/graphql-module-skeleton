@@ -25,6 +25,5 @@ script:
     - cd graphql-module
     - composer test:syntax
     - composer test:lint
-    - composer test:lint-fixer
     - composer test:static
     - composer test:unit

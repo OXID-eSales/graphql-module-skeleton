@@ -24,6 +24,5 @@ before_script:
 script:
     - composer test:syntax
     - composer test:lint
-    - composer test:lint-fixer
     - composer test:static
     - composer test:unit

@@ -3,12 +3,12 @@
 declare(strict_types=1);
 
 $header = <<<'EOF'
-All rights reserved.
+Copyright © OXID eSales AG. All rights reserved.
 See LICENSE file for license details.
 EOF;
 
 $finder = PhpCsFixer\Finder::create()
-    ->files()
+    ->exclude('Codeception/_support/_generated/')
     ->in(__DIR__ . '/src')
     ->in(__DIR__ . '/tests/');
 
@@ -23,6 +23,7 @@ return PhpCsFixer\Config::create()
             'space' => 'none'
         ],
         'function_typehint_space' => true,
+        'final_class' => true,
         'method_argument_space' => [
             'on_multiline' => 'ensure_fully_multiline',
         ],
