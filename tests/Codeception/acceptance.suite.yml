@@ -1,0 +1,10 @@
+# suite config
+actor: AcceptanceTester
+path: Acceptance
+modules:
+  enabled:
+    - \__Vendor__\GraphQL\__Package__\Tests\Codeception\Helper\Acceptance
+    - REST:
+        url: '%SHOP_URL%'
+        depends: PhpBrowser
+        part: Json
