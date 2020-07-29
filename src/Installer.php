@@ -81,8 +81,10 @@ class Installer
 
         $composerDefinition['name'] = $packageFull;
         $composerDefinition['description'] = '';
-        $composerDefinition['autoload']['psr-4'] = ["{$vendor}\\GraphQL\\{$package}\\" => 'src/'];
-        $composerDefinition['autoload-dev']['psr-4'] = ["{$vendor}\\GraphQL\\{$package}\\Tests\\" => 'tests/'];
+        $composerDefinition['autoload']['psr-4'] = [
+            "{$vendor}\\GraphQL\\{$package}\\" => 'src/',
+            "{$vendor}\\GraphQL\\{$package}\\Tests\\" => 'tests/'
+        ];
         $composerDefinition['extra']['oxideshop']['target-directory'] = $packageFull;
 
         return $composerDefinition;
