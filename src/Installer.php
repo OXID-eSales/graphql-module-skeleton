@@ -93,7 +93,7 @@ class Installer
         $jobRename = function (\SplFileInfo $file) use ($vendor, $package, $packageFull): void {
             $fileName = $file->getFilename();
             $filePath = (string) $file;
-            if ($file->isDir() || strpos($fileName, '.') === 0 || ! is_writable($filePath)) {
+            if ($file->isDir() || !is_writable($filePath)) {
                 return;
             }
             $contents = file_get_contents($filePath);
