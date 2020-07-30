@@ -1,11 +1,11 @@
 {
     "package": {
         "name": "oxid-esales/graphql-module",
-        "version": "1.0.0",
+        "version": "2.0.0",
         "source": {
           "url": "./",
           "type": "git",
-          "reference": "master-prepare-webinar-OXDEV-3559"
+          "reference": "master"
         }
     }
 }
