@@ -17,7 +17,7 @@ use OxidEsales\Facts\Facts;
 class Acceptance extends \Codeception\Module
 {
     public function _beforeSuite($settings = []) {
-        exec((new Facts())->getShopRootPath() . '/bin/oe-console oe:module:activate oe/graphql-base');
+        exec((new Facts())->getShopRootPath() . '/bin/oe-console oe:module:activate oe_graphql_base');
         exec((new Facts())->getShopRootPath() . '/bin/oe-console oe:module:activate __PackageFull__');
     }
 }
