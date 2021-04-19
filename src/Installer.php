@@ -16,6 +16,10 @@ class Installer
 
     public static function preInstall(Event $event): void
     {
+    }
+
+    public static function postInstall(Event $event = null): void
+    {
         $io = $event->getIO();
         $vendor = self::ask($io, 'What is the vendor?', 'MyVendor');
         $package = self::ask($io, 'What is the package?', 'MyPackage');
@@ -26,10 +30,9 @@ class Installer
         // Update composer definition
         $json->write($composerDefinition);
         $io->write("<info>composer.json for {$composerDefinition['name']} is created.\n</info>");
-    }
 
-    public static function postInstall(Event $event = null): void
-    {
+
+
         unset($event);
         list($vendor, $package, $packageFull) = self::$packageName;
         $skeletonRoot = dirname(__DIR__);
@@ -37,10 +40,9 @@ class Installer
         // remove installer files
         unlink($skeletonRoot.'/README.md');
         unlink($skeletonRoot.'/LICENSE');
-        unlink($skeletonRoot.'/.travis.yml');
         unlink($skeletonRoot.'/packages.json');
         rename($skeletonRoot.'/README.md.dist', $skeletonRoot.'/README.md');
-        rename($skeletonRoot.'/.travis.yml.dist', $skeletonRoot.'/.travis.yml');
+        rename($skeletonRoot.'/.github/workflows/CI.yml.dist', $skeletonRoot.'/.github/workflows/CI.yml');
         unlink(__FILE__);
     }
 
@@ -74,8 +76,7 @@ class Installer
         unset(
             $composerDefinition['autoload']['files'],
             $composerDefinition['scripts']['pre-install-cmd'],
-            $composerDefinition['scripts']['pre-update-cmd'],
-            $composerDefinition['scripts']['post-create-project-cmd'],
+            $composerDefinition['scripts']['post-install-cmd'],
             $composerDefinition['homepage']
         );
 
