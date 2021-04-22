@@ -19,7 +19,14 @@ This skeleton will set you up with a
 $ composer create-project oxid-esales/graphql-module-skeleton
 ```
 
-This provides you with a basic GraphQL OXID module, that you may install into the shop via `composer`.
+This provides you with a basic GraphQL OXID module. To install this freshly created module into your OXID eShop you can:
+
+```bash
+$ composer config repositories.graphql path path-to-module/that-you-just-created
+$ composer require my-vendor/my-package
+```
+
+Make sure that `my-vendor/my-package` matches the package name in the package `composer.json`.
 
 ## License
 
