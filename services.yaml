@@ -6,7 +6,7 @@ services:
 
     __Vendor__\GraphQL\__Package__\:
         resource: 'src/*'
-        exclude: 'src/**/DataType'
+        exclude: 'src/**/{DataType,Exception,Infrastructure}'
         public: true
 
     __Vendor__\GraphQL\__Package__\Shared\Service\NamespaceMapper:
