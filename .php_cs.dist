@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 $header = <<<'EOF'
-Copyright © __Vender__. All rights reserved.
+Copyright © __Vendor__. All rights reserved.
 See LICENSE file for license details.
 EOF;
 
