@@ -24,7 +24,7 @@ final class CategoryRepository
         $category = oxNew(CategoryEshopModel::class);
 
         if (!$category->load($id)) {
-            throw new NotFound();
+            throw new NotFound($id);
         }
 
         return new CategoryDataType(
