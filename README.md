@@ -1,7 +1,7 @@
 # oxid-esales/graphql-module-skeleton
 
 
-[![Build Status](https://img.shields.io/travis/com/OXID-eSales/graphql-module-skeleton/master.svg?style=for-the-badge&logo=travis)](https://travis-ci.com/OXID-eSales/graphql-module-skeleton) [![PHP Version](https://img.shields.io/packagist/php-v/oxid-esales/graphql-module-skeleton.svg?style=for-the-badge)](https://github.com/oxid-esales/graphql-module-skeleton) [![Stable Version](https://img.shields.io/packagist/v/oxid-esales/graphql-module-skeleton.svg?style=for-the-badge&label=latest)](https://packagist.org/packages/oxid-esales/graphql-module-skeleton)
+[![PHP Version](https://img.shields.io/packagist/php-v/oxid-esales/graphql-module-skeleton.svg?style=for-the-badge)](https://github.com/oxid-esales/graphql-module-skeleton) [![Stable Version](https://img.shields.io/packagist/v/oxid-esales/graphql-module-skeleton.svg?style=for-the-badge&label=latest)](https://packagist.org/packages/oxid-esales/graphql-module-skeleton)
 
 ## What is this?
 
